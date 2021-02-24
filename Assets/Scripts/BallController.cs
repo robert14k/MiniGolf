@@ -21,14 +21,14 @@ public class BallController : MonoBehaviour
 
     public void OnCollisionEnter(Collision other)
     {
-        //if (other.gameObject.CompareTag("putter"))
-        //{
-        //    var magnitude = 5000;
-        //    var force = transform.position - other.transform.position;
+        if (other.gameObject.CompareTag("putter"))
+        {
+            var magnitude = 5;
+            var force = transform.position - other.transform.position;
 
-        //    force.Normalize();
-        //    rb.AddForce(force * magnitude);
-        //}
+            force.Normalize();
+            rb.AddForce(force * magnitude);
+        }
     }
 
 }
