@@ -346,7 +346,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 085fb456af4840949bea5bacb666b850, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.045426548
+      value: -0.077
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 085fb456af4840949bea5bacb666b850, type: 3}
       propertyPath: m_LocalPosition.z
@@ -905,7 +905,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d37c2cf88f7c59f4c8cf5d3812568143, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  index: 2
+  index: 3
   origin: {fileID: 0}
 --- !u!1 &1134757273
 GameObject:
@@ -1316,6 +1316,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 91c22966fbbbe0e43a6716214b949edd, type: 3}
   m_PrefabInstance: {fileID: 896730654}
   m_PrefabAsset: {fileID: 0}
+--- !u!54 &1735661473
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1735661471}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!64 &1735661475
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1323,12 +1339,12 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1735661471}
-  m_Material: {fileID: 13400000, guid: c8eaeff82ad4d45bb975c57c05a21fe1, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 30
+  m_CookingOptions: 0
   m_Mesh: {fileID: -4772251775003490219, guid: 91c22966fbbbe0e43a6716214b949edd, type: 3}
 --- !u!1 &1808430544
 GameObject:
