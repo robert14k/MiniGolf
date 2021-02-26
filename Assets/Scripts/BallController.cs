@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BallController : MonoBehaviour
+public class BallControllers : MonoBehaviour
 {
     public float speed;
-    private Rigidbody rb;
+    private Rigidbody rib;
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        rib = GetComponent<Rigidbody>();
         
     }
 
@@ -19,16 +19,16 @@ public class BallController : MonoBehaviour
         
     }
 
-    public void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.CompareTag("putter"))
-        {
-            var magnitude = 5;
-            var force = transform.position - other.transform.position;
+    //public void OnCollisionEnter(Collision other)
+    //{
+    //    if (other.gameObject.CompareTag("putter"))
+    //    {
+    //        var magnitude = 5;
+    //        var force = transform.position - other.transform.position;
 
-            force.Normalize();
-            rb.AddForce(force * magnitude);
-        }
-    }
+    //        force.Normalize();
+    //        rib.AddForce(force * magnitude);
+    //    }
+    //}
 
 }
