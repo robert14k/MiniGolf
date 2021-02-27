@@ -49,15 +49,23 @@ public class BallController : MonoBehaviour
 
     public void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.CompareTag("putter"))
+        if (other.gameObject.CompareTag("putterHed"))
         {
+
+            Debug.Log("YOO");
             //// calculate force vector
             //var forcex = transform. - other.transform.position;
             // normalize force vector to get direction only and trim magnitude
             var parent = other.transform.parent.gameObject;
+            var putter = other.gameObject;
+            var filter = putter.GetComponent<MeshFilter>();
+            var vector = filter.transform.TransformDirection(filter.mesh.normals[0]);
 
-            var direction = new Vector3(parent.transform.rotation.y + 90, 0, parent.transform.rotation.y) ;
-            rib.AddForce(direction);
+            //var direction = new Vector3(parent.transform.rotation.y + 90, 0, parent.transform.rotation.y) ;
+            var direction = new Vector3(vector.x, 0, vector.z);
+            Debug.Log(other.relativeVelocity);
+            Debug.Log(other.relativeVelocity.magnitude);
+            rib.AddForce(direction * other.relativeVelocity.magnitude * 500);
 
         }
     }
