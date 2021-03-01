@@ -65,6 +65,7 @@ public class BallController : MonoBehaviour
             var direction = new Vector3(vector.x, 0, vector.z);
             Debug.Log(other.relativeVelocity);
             Debug.Log(other.relativeVelocity.magnitude);
+            var otherColSpeed = Vector3.Dot(-vector, other.relativeVelocity + rib.velocity);
             rib.AddForce(direction * other.relativeVelocity.magnitude * 500);
 
         }
