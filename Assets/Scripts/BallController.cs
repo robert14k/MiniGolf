@@ -70,7 +70,8 @@ public class BallController : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("putter"))
         {
-            Vector3 colNormal = (other.transform.position - transform.position).normalized;
+            //Vector3 colNormal = (other.transform.position - transform.position).normalized;
+            Vector3 colNormal = (other.contacts[0].point - transform.position).normalized;
 
             float ballColSpeed = Vector3.Dot(colNormal, rib.velocity);
             if (ballColSpeed < 0) { ballColSpeed = 0; }
