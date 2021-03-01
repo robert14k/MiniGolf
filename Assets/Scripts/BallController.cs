@@ -68,6 +68,21 @@ public class BallController : MonoBehaviour
             rib.AddForce(direction * other.relativeVelocity.magnitude * 500);
 
         }
+        else if (other.gameObject.CompareTag("putter"))
+        {
+            Vector3 colNormal = (other.transform.position - transform.position).normalized;
+
+            float ballColSpeed = Vector3.Dot(colNormal, rib.velocity);
+            if (ballColSpeed < 0) { ballColSpeed = 0; }
+
+            float otherColSpeed = 0f;
+
+            if (other.relativeVelocity.magnitude > ballColSpeed)
+            {
+                otherColSpeed = Vector3.Dot(-colNormal, other.relativeVelocity + rib.velocity);
+            }
+            rib.AddForce(colNormal * otherColSpeed);
+        }
     }
 
 }
